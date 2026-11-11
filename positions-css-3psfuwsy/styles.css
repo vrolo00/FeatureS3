@@ -1,0 +1,125 @@
+/* Reseteo básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  line-height:20px;
+  padding-top: 60px; /* Dejar hueco para el header fijo */
+}
+
+code {
+  font-weight: bold;  
+}
+
+/* Header fijo arriba con position: fixed */
+.fixed-header {
+  position: fixed;   /* Siempre visible arriba */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background: #282828;
+  color: #fff;
+  z-index: 999;       /* Por encima del resto */
+}
+
+/* Estilo general de las secciones de ejemplo */
+.demo-section {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+.demo-section h2 {
+  margin-bottom: 10px;
+}
+
+.demo-section p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Caja base para ver el position */
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  border: 2px solid #282828;
+  font-weight: bold;
+}
+
+/* 1. position: static (por defecto) */
+.box-static {
+  /* position: static es el valor por defecto: no hace falta ponerlo */
+  background: #8ed1fc;
+  border-color: #5e98d9;
+}
+
+/* 2. position: sticky */
+.sticky-bar {
+  position: sticky;
+  top: 70px; /* Se “pega” cuando haya 70px hasta el top */
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  border-radius: 50px;
+  background: #dea325;
+}
+
+/* 3. position: relative */
+.box-relative {
+  position: relative;
+  left: 30px;   /* Se mueve 30px respecto a su posición original */
+  top: 10px;
+  background: #fd98a8;
+  border-color: #ff6392;
+}
+
+/* 4. position: absolute dentro de un contenedor relativo */
+.relative-container {
+  position: relative; /* El hijo absolute tomará este como referencia */
+  height: 180px;
+  border: 1px dashed #999;
+  margin-top: 8px;
+  background: #f1f1f1;
+}
+
+.box-absolute {
+  position: absolute;
+  top: 20px;  /* 20px desde el top del .relative-container */
+  right: 20px;
+  background: #00edb1;
+  border-color: #76c893;
+}
+
+/* Caja de referencia dentro del contenedor */
+.box-background {
+  width: 100px;
+  height: 100px;
+  background: #ddd;
+  margin: 16px;
+}
+
+/* 5. Otro ejemplo de fixed (botón flotante abajo a la derecha) */
+.fixed-button {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  padding: 10px 16px;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 50px;
+  background: #219ebc;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  cursor: pointer;
+}

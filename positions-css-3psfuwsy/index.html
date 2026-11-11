@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Guía de position en CSS</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+
+    <!-- HEADER FIJO: position: fixed -->
+    <header class="fixed-header">
+      position: fixed – Estoy siempre arriba
+    </header>
+
+    <main>
+      <!-- 1. position: static -->
+      <section class="demo-section">
+        <h2>position: static (por defecto)</h2>
+        <p>
+          Es el valor por defecto de todos los elementos.  
+          No se “despega” del flujo normal de la página y no responde a
+          <code>top</code>, <code>left</code>, <code>right</code> ni <code>bottom</code>.
+        </p>
+
+        <div class="box box-static">
+          STATIC
+        </div>
+      </section>
+
+      <!-- 2. position: sticky -->
+      <section class="demo-section">
+        <h2>position: sticky</h2>
+        <p>
+          Es una mezcla entre <code>relative</code> y <code>fixed</code>.  
+          Se comporta normal hasta que hacemos scroll y llega a la posición
+          indicada con <code>top</code>, donde se “pega” y se queda fija.
+        </p>
+        
+        <div class="sticky-bar">
+          Yo soy sticky: me “pego” al hacer scroll
+        </div>
+        
+        <p>
+          Haz scroll en esta página para ver cómo esta barra se queda fijada
+          cuando llega al límite superior. Este comportamiento es muy útil 
+          para menús, cabeceras de tablas o mensajes de aviso que 
+          queremos mantener visibles mientras el usuario baja por el contenido.
+        </p>
+        <p>
+          Sigue leyendo este texto de relleno... Lorem ipsum dolor sit amet, 
+          consectetur adipisicing elit. Rerum quaerat dolore sint eius, 
+          tempora, ullam, ducimus deserunt obcaecati ad eum iste nihil 
+          quidem cupiditate. Quisquam quos ea tempora earum obcaecati.
+        </p>
+        <p>
+          Más texto de ejemplo para que el scroll sea largo. Lorem ipsum dolor 
+          sit amet consectetur adipisicing elit. Dolore aperiam numquam 
+          nesciunt vel dolorum porro velit ratione, eligendi a similique 
+          corrupti, placeat necessitatibus, libero saepe cupiditate impedit 
+          quasi asperiores?
+        </p>
+        <p>
+        Un poquito más de texto de ejemplo para que el scroll sea largo. Lorem ipsum dolor 
+        sit amet consectetur adipisicing elit. Dolore aperiam numquam 
+        nesciunt vel dolorum porro velit ratione, eligendi a similique 
+        corrupti, placeat necessitatibus, libero saepe cupiditate impedit 
+        quasi asperiores?
+      </p>
+      </section>
+      <!-- 3. position: relative -->
+      <section class="demo-section">
+        <h2>position: relative</h2>
+        <p>
+          El elemento sigue ocupando su sitio, pero podemos moverlo desde su posición original usando <code>top</code>, <code>left</code>, <code>right</code>, <code>bottom</code>  
+          Esa posición original se sigue “reservando”.
+        </p>
+  
+        <div class="box box-relative">
+          RELATIVE
+        </div>
+      </section>
+      
+      <!-- 4. position: absolute -->
+      <section class="demo-section">
+        <h2>position: absolute</h2>
+        <p>
+          El elemento se <strong>saca del flujo</strong> de la página.  
+          Se posiciona respecto a su padre posicionado más cercano
+          (el primer padre con position distinta de <code>static</code>).
+        </p>
+        
+        <div class="relative-container">
+          <!-- Caja de fondo solo para ver el contenedor -->
+          <div class="box-background"></div>
+          
+          <!-- Esta caja se mueve respecto al .relative-container -->
+          <div class="box box-absolute">
+            ABSOLUTE
+          </div>
+        </div>
+      </section>
+      <!-- 5. Botón flotante con fixed -->
+      <button class="fixed-button">
+        Botón flotante (fixed)
+      </button>
+    </main>
+      
+    </body>
+    </html>
+    
